@@ -1,0 +1,6 @@
+interface:
+  display_name: "Kuma Product Research"
+  short_description: "用卖家精灵分析销量、关键词、竞争与差评，生成直观的市场研究报告"
+  default_prompt: "使用 $kuma-product-research 在agent内置浏览器完成目标的标准多维度调研并生成可视化报告。"
+policy:
+  allow_implicit_invocation: true

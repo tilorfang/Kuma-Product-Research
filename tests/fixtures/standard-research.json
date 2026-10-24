@@ -1,0 +1,356 @@
+{
+  "schema_version": "3.0",
+  "title": "多维度标准研究 · 合成验收数据",
+  "demo": true,
+  "site": "US",
+  "date": "2026-10-23",
+  "branch": "mature",
+  "scope": "合成同规格单套样本，不与其他细分混算",
+  "decision": "继续验证",
+  "decision_scope": "仅用于本阶段测试，不批准采购",
+  "summary": "同规格样本有需求线索，先继续询价；未计算利润。",
+  "profit_file": null,
+  "dimensions": [
+    {
+      "name": "需求",
+      "conclusion": "测试样本已有近月信号，稳定性仍需核实。",
+      "metrics": [],
+      "action": "核对目标子体趋势。",
+      "evidence": "合成样例，不是市场结论",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "name": "竞争",
+      "conclusion": "只比较同规格和装数的样本，不能代表整个品类。",
+      "metrics": [],
+      "action": "核对可比价格。",
+      "evidence": "合成样例，不是市场结论",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "name": "利润",
+      "conclusion": "尚未验证利润，缺少成本不阻塞机会初筛。",
+      "metrics": [],
+      "action": "有机会后提供成本或目标利润率。",
+      "evidence": "合成样例，不是市场结论",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "name": "落地风险",
+      "conclusion": "接口与质量尚未验证，不能认定已可交付。",
+      "metrics": [],
+      "action": "样品前核实接口。",
+      "evidence": "合成样例，不是市场结论",
+      "source_ids": [
+        "S01"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "sellersprite_export",
+      "name": "合成卖家精灵字段记录（测试）",
+      "locator": "raw/synthetic.json",
+      "retrieved": "2026-10-23",
+      "period": "2026-09",
+      "scope": "每条记录单独标明父子体",
+      "nature": "合成测试数据，非市场实查",
+      "raw_file": "raw/synthetic.json"
+    }
+  ],
+  "key_evidence": [
+    {
+      "text": "合成竞品整套价20美元，目标月销为平台估算。",
+      "source_ids": [
+        "S01"
+      ]
+    }
+  ],
+  "risks": [
+    "样例数据不能用于实际备货。"
+  ],
+  "gaps": [],
+  "priority_action": "按可比规格询价并提供人民币整套成本与包装。",
+  "coverage": [],
+  "mode": "standard",
+  "research_status": "completed",
+  "products": [
+    {
+      "asin": "B000000001",
+      "role": "target",
+      "brand": "演示A",
+      "spec": "演示单套",
+      "price_usd": 20,
+      "reviews": 50,
+      "rating": 3.8,
+      "listed_at": "2026-01-01",
+      "segment": "异常评分样本",
+      "comparison_group": "演示同规格",
+      "reason": "合成测试，不作商业判断",
+      "source_ids": [
+        "S01"
+      ],
+      "monthly_sales": {
+        "value": 82,
+        "kind": "estimate",
+        "scope": "child",
+        "period": "2026-09",
+        "source_ids": [
+          "S01"
+        ]
+      }
+    },
+    {
+      "asin": "B000000002",
+      "role": "competitor",
+      "brand": "演示B",
+      "spec": "演示单套",
+      "price_usd": 25,
+      "reviews": 80,
+      "rating": 4.4,
+      "listed_at": "2026-04-01",
+      "segment": "新品",
+      "comparison_group": "演示同规格",
+      "reason": "合成测试",
+      "source_ids": [
+        "S01"
+      ],
+      "monthly_sales": {
+        "value": 122,
+        "kind": "estimate",
+        "scope": "child",
+        "period": "2026-09",
+        "source_ids": [
+          "S01"
+        ]
+      }
+    }
+  ],
+  "sales_series": [
+    {
+      "subject": "B000000001",
+      "label": "B000000001 月销估算",
+      "unit": "套",
+      "period": "2026-07至2026-09",
+      "scope": "child",
+      "kind": "estimate",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-07",
+          "value": 40
+        },
+        {
+          "date": "2026-08",
+          "value": null
+        },
+        {
+          "date": "2026-09",
+          "value": 82
+        }
+      ]
+    },
+    {
+      "subject": "B000000002",
+      "label": "B000000002 月销估算",
+      "unit": "套",
+      "period": "2026-07至2026-09",
+      "scope": "child",
+      "kind": "estimate",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-07",
+          "value": 40
+        },
+        {
+          "date": "2026-08",
+          "value": null
+        },
+        {
+          "date": "2026-09",
+          "value": 122
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "keyword": "demo filter",
+      "category": "核心",
+      "relevance": "合成高相关词",
+      "monthly_searches": 1234,
+      "period": "2026-09",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "keyword": "demo filter handheld",
+      "category": "场景",
+      "relevance": "合成手持场景",
+      "monthly_searches": 345,
+      "period": "2026-09",
+      "source_ids": [
+        "S01"
+      ]
+    }
+  ],
+  "keyword_series": [
+    {
+      "subject": "demo filter",
+      "label": "demo filter",
+      "unit": "次",
+      "period": "2026-07至2026-09",
+      "scope": "keyword",
+      "kind": "estimate",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-07",
+          "value": 200
+        },
+        {
+          "date": "2026-08",
+          "value": null
+        },
+        {
+          "date": "2026-09",
+          "value": 1234
+        }
+      ]
+    },
+    {
+      "subject": "demo filter handheld",
+      "label": "demo filter handheld",
+      "unit": "次",
+      "period": "2026-07至2026-09",
+      "scope": "keyword",
+      "kind": "estimate",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-07",
+          "value": 200
+        },
+        {
+          "date": "2026-08",
+          "value": null
+        },
+        {
+          "date": "2026-09",
+          "value": 345
+        }
+      ]
+    }
+  ],
+  "review_themes": [
+    {
+      "id": "T01",
+      "asin": "B000000001",
+      "theme": "密封接口渗水（合成）",
+      "category": "制造",
+      "count": 3,
+      "sample_size": 10,
+      "sampling": "合成10条近期低分样本",
+      "counting_rule": "每条每主题一次，可多标签",
+      "evidence_level": "review_text",
+      "finding": "仅用于验证证据展示",
+      "source_ids": [
+        "S01"
+      ],
+      "quotes": [
+        {
+          "text": "Synthetic quote: seal leaks.",
+          "review_id": "DEMO-R1",
+          "source_ids": [
+            "S01"
+          ]
+        }
+      ],
+      "scope": "child"
+    }
+  ],
+  "opportunities": [
+    {
+      "title": "改良密封结构（合成）",
+      "evidence_level": "评价证实的痛点",
+      "theme_ids": [
+        "T01"
+      ],
+      "source_ids": [
+        "S01"
+      ],
+      "hypothesis": "密封圈修改可能改善，尚未验证",
+      "difficulty": "中",
+      "validation": "样品压力与耐久测试"
+    }
+  ],
+  "module_status": {
+    "sales": {
+      "status": "available",
+      "attempts": [
+        "合成测试输入"
+      ],
+      "reason": "",
+      "finding": "合成验证展示",
+      "elapsed_seconds": null,
+      "page_visits": null
+    },
+    "keywords": {
+      "status": "available",
+      "attempts": [
+        "合成测试输入"
+      ],
+      "reason": "",
+      "finding": "合成验证展示",
+      "elapsed_seconds": null,
+      "page_visits": null
+    },
+    "competition": {
+      "status": "available",
+      "attempts": [
+        "合成测试输入"
+      ],
+      "reason": "",
+      "finding": "合成验证展示",
+      "elapsed_seconds": null,
+      "page_visits": null
+    },
+    "reviews": {
+      "status": "available",
+      "attempts": [
+        "合成测试输入"
+      ],
+      "reason": "",
+      "finding": "合成验证展示",
+      "elapsed_seconds": null,
+      "page_visits": null
+    },
+    "economics": {
+      "status": "not_queried",
+      "attempts": [
+        "合成测试输入"
+      ],
+      "reason": "未提供成本，合成测试不计算",
+      "finding": "利润未测算",
+      "elapsed_seconds": null,
+      "page_visits": null
+    }
+  }
+}

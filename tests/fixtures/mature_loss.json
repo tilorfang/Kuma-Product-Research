@@ -1,0 +1,185 @@
+{
+  "research": {
+    "schema_version": "2.0",
+    "title": "成熟市场：当前方案亏损提前停止",
+    "demo": true,
+    "site": "US",
+    "date": "2026-10-23",
+    "stage": "B",
+    "branch": "mature",
+    "scope": "合成同规格单套样本，不与其他细分混算",
+    "decision": "淘汰",
+    "decision_scope": "仅用于本阶段测试，不批准采购",
+    "summary": "同规格价12美元、采购100元下，扣费用后亏损，停止当前方案。",
+    "profit_file": "profit-result.json",
+    "dimensions": [
+      {
+        "name": "需求",
+        "conclusion": "测试样本已有近月信号，稳定性仍需核实。",
+        "metrics": [],
+        "action": "核对目标子体趋势。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "竞争",
+        "conclusion": "只比较同规格和装数的样本，不能代表整个品类。",
+        "metrics": [],
+        "action": "核对可比价格。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "利润",
+        "conclusion": "同规格售价不足以覆盖采购与费用，继续补评价不会改善当前亏损。",
+        "metrics": [],
+        "action": "停止当前方案。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01",
+          "U01"
+        ]
+      },
+      {
+        "name": "落地风险",
+        "conclusion": "接口与质量尚未验证，不能认定已可交付。",
+        "metrics": [],
+        "action": "样品前核实接口。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "kind": "sellersprite_export",
+        "name": "合成卖家精灵字段记录（测试）",
+        "locator": "raw/synthetic.json",
+        "retrieved": "2026-10-23",
+        "period": "2026-09",
+        "scope": "每条记录单独标明父子体",
+        "nature": "合成测试数据，非市场实查",
+        "raw_file": "raw/synthetic.json"
+      },
+      {
+        "id": "U01",
+        "kind": "user",
+        "role": "business_input",
+        "name": "合成采购与包装业务输入",
+        "locator": "profit-input.json",
+        "retrieved": "2026-10-23",
+        "period": "本次情景",
+        "scope": "单套",
+        "nature": "合成用户估价，非实际报价",
+        "raw_file": "profit-input.json"
+      }
+    ],
+    "key_evidence": [
+      {
+        "text": "合成同规格整套价12美元；本方案采购100元后费用无法覆盖。",
+        "source_ids": [
+          "S01",
+          "U01"
+        ]
+      }
+    ],
+    "risks": [
+      "样例数据不能用于实际备货。"
+    ],
+    "gaps": [],
+    "priority_action": "停止当前成本方案；只有成本或规格显著改变才重算。",
+    "coverage": [
+      {
+        "target": "B000000001",
+        "field": "深入评价",
+        "critical": false,
+        "status": "not_queried",
+        "available": "未查",
+        "attempts": [],
+        "decision_impact": "经济性已否定当前方案，停止无关深挖。",
+        "next_action": "当前无需继续"
+      }
+    ],
+    "demand": {
+      "label": "合成精准词搜索量",
+      "unit": "次/月",
+      "subject": "synthetic keyword",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-08",
+          "value": 121.6
+        },
+        {
+          "date": "2026-09",
+          "value": 150.4
+        }
+      ]
+    },
+    "sales": {
+      "label": "合成目标子体销量估算",
+      "unit": "套/月",
+      "subject": "B000000001",
+      "scope": "child",
+      "kind": "estimate",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-08",
+          "value": null
+        },
+        {
+          "date": "2026-09",
+          "value": 81.6
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "asin": "B000000001",
+        "brand": "测试品牌",
+        "spec": "同规格1套装",
+        "price_usd": 12,
+        "reviews": 12,
+        "reason": "同规格同装数",
+        "source_ids": [
+          "S01"
+        ],
+        "monthly_sales": {
+          "value": 81.6,
+          "kind": "estimate",
+          "scope": "child",
+          "period": "2026-09",
+          "source_ids": [
+            "S01"
+          ]
+        }
+      }
+    ]
+  },
+  "profit_input": {
+    "site": "US",
+    "price_usd": 12,
+    "unit_cost_cny": 100,
+    "quantity": 1,
+    "fx": 7,
+    "weight_kg": 0.5,
+    "length_cm": 20,
+    "width_cm": 15,
+    "height_cm": 5,
+    "season": "off",
+    "rate_cny_kg": 14,
+    "fba_override_usd": 4,
+    "fba_override_source": "合成费用覆盖值，仅测试"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "historical_case": "B0H3KW3KXZ",
+  "date": "2026-10-23",
+  "purpose": "仅作历史口径回归，不是当前实查数据，不作为生产指令",
+  "target_purchase_band": "<50",
+  "parent_estimate": 235,
+  "different_spec_child": "B0F3VRXK73",
+  "target_listed": "2026-06-11",
+  "invariants": [
+    "父体235不作为目标子体月销",
+    "其他规格子体历史不挪到目标",
+    "不要求上架前历史",
+    "历史/关键词未查完整不写平台无数据"
+  ]
+}

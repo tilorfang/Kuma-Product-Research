@@ -1,0 +1,170 @@
+{
+  "research": {
+    "schema_version": "2.0",
+    "title": "只有父体销量：不冒充本款销量",
+    "demo": true,
+    "site": "US",
+    "date": "2026-10-23",
+    "stage": "A",
+    "branch": "mature",
+    "scope": "合成同规格单套样本，不与其他细分混算",
+    "decision": "待补证据",
+    "decision_scope": "仅用于本阶段测试，不批准采购",
+    "summary": "只有共享父体估算，不能判断本款需求，先核目标变体。",
+    "profit_file": null,
+    "dimensions": [
+      {
+        "name": "需求",
+        "conclusion": "本款购买提示少于50，父体估算包含其他规格，还不能判断本款稳定销量。",
+        "metrics": [],
+        "action": "核目标变体销量详情。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "竞争",
+        "conclusion": "只比较同规格和装数的样本，不能代表整个品类。",
+        "metrics": [],
+        "action": "核对可比价格。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "利润",
+        "conclusion": "尚未验证利润，缺少成本不阻塞机会初筛。",
+        "metrics": [],
+        "action": "有机会后提供成本或目标利润率。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "落地风险",
+        "conclusion": "接口与质量尚未验证，不能认定已可交付。",
+        "metrics": [],
+        "action": "样品前核实接口。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "kind": "sellersprite_export",
+        "name": "合成卖家精灵字段记录（测试）",
+        "locator": "raw/synthetic.json",
+        "retrieved": "2026-10-23",
+        "period": "2026-09",
+        "scope": "每条记录单独标明父子体",
+        "nature": "合成测试数据，非市场实查",
+        "raw_file": "raw/synthetic.json"
+      }
+    ],
+    "key_evidence": [
+      {
+        "text": "本款只有<50购买提示，父体估算235包含不同规格，不能归为本款月销量。",
+        "source_ids": [
+          "S01"
+        ]
+      }
+    ],
+    "risks": [
+      "样例数据不能用于实际备货。"
+    ],
+    "gaps": [],
+    "priority_action": "打开变体详情核本款销量或取得同来源导出。",
+    "coverage": [
+      {
+        "target": "B000000001",
+        "field": "目标子体月销量",
+        "critical": true,
+        "status": "partial",
+        "available": "父体235及本款购买档位<50",
+        "source_ids": [
+          "S01"
+        ],
+        "attempts": [
+          {
+            "page": "合成变体详情",
+            "result": "只读到共享父体"
+          }
+        ],
+        "decision_impact": "不能据父体估算决定本款备货。",
+        "next_action": "核变体详情/导出"
+      }
+    ],
+    "demand": {
+      "label": "合成精准词搜索量",
+      "unit": "次/月",
+      "subject": "synthetic keyword",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-08",
+          "value": 121.6
+        },
+        {
+          "date": "2026-09",
+          "value": 150.4
+        }
+      ]
+    },
+    "sales": {
+      "label": "本款无可靠序列",
+      "points": [],
+      "signals": [
+        {
+          "subject": "目标子体",
+          "display": "<50",
+          "scope": "目标子体购买提示",
+          "period": "近30天",
+          "note": "非精确月销",
+          "source_ids": [
+            "S01"
+          ]
+        },
+        {
+          "subject": "共享父体",
+          "display": "235",
+          "scope": "父体参考",
+          "period": "近30天",
+          "note": "包含不同规格，不归本款",
+          "source_ids": [
+            "S01"
+          ]
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "asin": "B000000001",
+        "brand": "测试品牌",
+        "spec": "同规格1套装",
+        "price_usd": 20,
+        "reviews": 12,
+        "reason": "同规格同装数",
+        "source_ids": [
+          "S01"
+        ],
+        "monthly_sales": {
+          "value": 235,
+          "kind": "estimate",
+          "scope": "parent",
+          "period": "近30天",
+          "source_ids": [
+            "S01"
+          ]
+        }
+      }
+    ]
+  }
+}

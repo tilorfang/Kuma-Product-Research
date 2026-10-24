@@ -1,0 +1,145 @@
+{
+  "research": {
+    "schema_version": "2.0",
+    "title": "缺少成本仍完成机会初筛",
+    "demo": true,
+    "site": "US",
+    "date": "2026-10-23",
+    "stage": "A",
+    "branch": "mature",
+    "scope": "合成同规格单套样本，不与其他细分混算",
+    "decision": "继续验证",
+    "decision_scope": "仅用于本阶段测试，不批准采购",
+    "summary": "同规格样本有需求线索，先继续询价；未计算利润。",
+    "profit_file": null,
+    "dimensions": [
+      {
+        "name": "需求",
+        "conclusion": "测试样本已有近月信号，稳定性仍需核实。",
+        "metrics": [],
+        "action": "核对目标子体趋势。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "竞争",
+        "conclusion": "只比较同规格和装数的样本，不能代表整个品类。",
+        "metrics": [],
+        "action": "核对可比价格。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "利润",
+        "conclusion": "尚未验证利润，缺少成本不阻塞机会初筛。",
+        "metrics": [],
+        "action": "有机会后提供成本或目标利润率。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      },
+      {
+        "name": "落地风险",
+        "conclusion": "接口与质量尚未验证，不能认定已可交付。",
+        "metrics": [],
+        "action": "样品前核实接口。",
+        "evidence": "合成样例，不是市场结论",
+        "source_ids": [
+          "S01"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "kind": "sellersprite_export",
+        "name": "合成卖家精灵字段记录（测试）",
+        "locator": "raw/synthetic.json",
+        "retrieved": "2026-10-23",
+        "period": "2026-09",
+        "scope": "每条记录单独标明父子体",
+        "nature": "合成测试数据，非市场实查",
+        "raw_file": "raw/synthetic.json"
+      }
+    ],
+    "key_evidence": [
+      {
+        "text": "合成竞品整套价20美元，目标月销为平台估算。",
+        "source_ids": [
+          "S01"
+        ]
+      }
+    ],
+    "risks": [
+      "样例数据不能用于实际备货。"
+    ],
+    "gaps": [],
+    "priority_action": "按可比规格询价并提供人民币整套成本与包装。",
+    "coverage": [],
+    "demand": {
+      "label": "合成精准词搜索量",
+      "unit": "次/月",
+      "subject": "synthetic keyword",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-08",
+          "value": 121.6
+        },
+        {
+          "date": "2026-09",
+          "value": 150.4
+        }
+      ]
+    },
+    "sales": {
+      "label": "合成目标子体销量估算",
+      "unit": "套/月",
+      "subject": "B000000001",
+      "scope": "child",
+      "kind": "estimate",
+      "source_ids": [
+        "S01"
+      ],
+      "points": [
+        {
+          "date": "2026-08",
+          "value": null
+        },
+        {
+          "date": "2026-09",
+          "value": 81.6
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "asin": "B000000001",
+        "brand": "测试品牌",
+        "spec": "同规格1套装",
+        "price_usd": 20,
+        "reviews": 12,
+        "reason": "同规格同装数",
+        "source_ids": [
+          "S01"
+        ],
+        "monthly_sales": {
+          "value": 81.6,
+          "kind": "estimate",
+          "scope": "child",
+          "period": "2026-09",
+          "source_ids": [
+            "S01"
+          ]
+        }
+      }
+    ]
+  }
+}

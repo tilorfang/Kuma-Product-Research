@@ -1,0 +1,46 @@
+{
+  "schema_version": "3.0",
+  "generated_for": "2026-10-23",
+  "outputs": [
+    "report.md",
+    "report.html"
+  ],
+  "files": [
+    {
+      "path": "run/research.json",
+      "sha256": "ec680dbc894e6867cf4fe913399c8d733e3f2ff8259471e17eea60a2eb90414c"
+    },
+    {
+      "path": "run/raw/synthetic.json",
+      "sha256": "7c34055dc7c6af3a8099fda7504351a7793b762f47af69723c1378388aac1677"
+    },
+    {
+      "path": "run/raw/images/demo-1.png",
+      "sha256": "334e2de0348d45efd703bc6ee721b1fc70da7ef96c16985ece688d334427d44d"
+    },
+    {
+      "path": "run/raw/images/demo-2.png",
+      "sha256": "c7a3daa6d275eec0a797b19775cb00876ce372ef9937749c3287267347476ef7"
+    },
+    {
+      "path": "skill/assets/report.html",
+      "sha256": "c16f530eb4db45cafcac32e46fc643c5aa420729e070acea2e6861b28f28b864"
+    },
+    {
+      "path": "skill/assets/calculator.js",
+      "sha256": "3a270079091d2bfbbdb807f350b607ee88eb87243f9c0b56c6086ca9d1c949fe"
+    },
+    {
+      "path": "skill/assets/calculator-ui.js",
+      "sha256": "feb56c72b364f043380363e9d6be417be9084a2ad37865e1a3426c38e69086c1"
+    },
+    {
+      "path": "run/report.md",
+      "sha256": "c0a80b27ef4acbd950e08ab49e823d4e16929e6759566bfdf9868ade0179e1de"
+    },
+    {
+      "path": "run/report.html",
+      "sha256": "a80e5aee68eb46d198b49a3f0df020d2ab517e539879e7aadb1bc517ba81dd45"
+    }
+  ]
+}
