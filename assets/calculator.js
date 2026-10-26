@@ -1,4 +1,4 @@
-/* Port of V17 FbaModel.cs / Integration.cs. No network or OCR. */
+/* Port of FbaModel.cs / Integration.cs. No network or OCR. */
 (function(root) {
   'use strict';
   const ceil = x => Math.ceil(x - 1e-9);

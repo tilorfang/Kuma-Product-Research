@@ -22,5 +22,5 @@ def panel(data, inputs, esc):
     profit+=select('advertising_model','广告情景',[('percent','按售价比例'),('bid_cvr','建议竞价 / 假设转化率')])+num('advertising_pct','广告预算 · %')+num('suggested_bid_usd','建议竞价 · USD（非实际CPC）')+num('conversion_rate_pct','假设转化率 · %')
     body+=group('03  利润情景',profit)
     body+='<div class="calc-actions"><button type="submit">计算</button><button type="button" class="calc-reset">恢复原输入</button></div><div class="calc-summary" hidden aria-live="polite">'+''.join('<div><small>'+label+'</small><strong data-result="'+key+'">—</strong></div>' for key,label in [('freight','头程运费 · USD'),('fba','FBA · USD'),('profit','预估利润 · USD'),('margin','利润率')])+'</div><output class="calc-result" aria-live="polite">填写成本和包装后计算。</output>'
-    body+='<details class="calc-notes"><summary>计算口径与适用范围</summary><p>包装尺寸按所选口径计算。V17固定2026美国非服装费率；未覆盖仓储、关税、认证、开模。修改结果为本地情景，不改原始调研结论。</p></details></form></section>'
+    body+='<details class="calc-notes"><summary>计算口径与适用范围</summary><p>包装尺寸按所选口径计算。固定2026美国非服装费率；未覆盖仓储、关税、认证、开模。修改结果为本地情景，不改原始调研结论。</p></details></form></section>'
     return body

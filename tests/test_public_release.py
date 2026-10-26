@@ -1,3 +1,4 @@
+import base64
 import json
 import sys
 import tempfile
@@ -36,12 +37,17 @@ class PublicReleaseTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate(d)
 
-    def test_demo_and_image_are_traceable(self):
-        d = json.loads((ROOT/'examples/demo/research.json').read_text(encoding='utf-8'))
-        self.assertTrue(d['demo'])
+    def test_offline_image_is_traceable(self):
+        d = self.data()
+        d['products'][0].update(image_file='raw/images/product.png', image_source_ids=['S01'])
         with tempfile.TemporaryDirectory() as temp:
-            render(ROOT/'examples/demo/research.json', Path(temp))
-            html = (Path(temp)/'report.html').read_text(encoding='utf-8')
+            p = Path(temp)
+            (p/'raw/images').mkdir(parents=True)
+            (p/'raw/images/product.png').write_bytes(base64.b64decode(
+                'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aS1sAAAAASUVORK5CYII='))
+            (p/'research.json').write_text(json.dumps(d), encoding='utf-8')
+            render(p/'research.json', p)
+            html = (p/'report.html').read_text(encoding='utf-8')
             self.assertIn('data:image/png;base64,', html)
             self.assertIn('演示数据', html)
             self.assertIn('Kuma Product Research', html)

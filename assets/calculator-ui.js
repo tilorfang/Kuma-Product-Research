@@ -33,7 +33,7 @@
    summary.hidden=false;
    const results={freight:money(freight.usd),fba:money(delivery),profit:money(profit),margin:(profit/p*100).toFixed(1)+'%'};
    summary.querySelectorAll('[data-result]').forEach(el=>{el.textContent=results[el.dataset.result];});
-   out.textContent='预估利润 $'+money(profit)+' / 利润率 '+(profit/p*100).toFixed(1)+'%\n采购 $'+money(procurement)+' · 头程 $'+money(freight.usd)+' · FBA $'+money(delivery)+' · 广告情景 $'+money(ads)+'\n'+(override===null?ref.name+' · V17固定参考费率':'FBA来源：'+raw.fba_override_source);
+   out.textContent='预估利润 $'+money(profit)+' / 利润率 '+(profit/p*100).toFixed(1)+'%\n采购 $'+money(procurement)+' · 头程 $'+money(freight.usd)+' · FBA $'+money(delivery)+' · 广告情景 $'+money(ads)+'\n'+(override===null?ref.name+' · 固定参考费率':'FBA来源：'+raw.fba_override_source);
   }catch(err){summary.hidden=true;out.textContent=err.message;}
  });
 })();

@@ -1,6 +1,6 @@
 # 运费和经济性计算
 
-需要验证经济性时读取。V17固定2026美国非服装FBA参考表独立保存在 economics.py，不依赖其他工程。它不是实时费率；采用卖家精灵已核费用时使用有来源的覆盖值并保留参考差异。非US不套美国表。
+需要验证经济性时读取。固定2026美国非服装FBA参考表独立保存在 economics.py，不依赖其他工程。它不是实时费率；采用卖家精灵已核费用时使用有来源的覆盖值并保留参考差异。非US不套美国表。
 
 ## 输入模式
 
@@ -9,7 +9,7 @@
 - `mode=profit`（默认）：另需 `unit_cost_cny`。已知真实成本才计算利润。
 - `mode=cost_ceiling`：无需采购成本，另需明确 `target_margin_pct`（0–100）。只返回采购上限情景，status=ceiling_estimate，profit_usd/margin/procurement_usd保持null。不要填0采购成本来模拟此模式。
 - `cost_basis=unit/set`（默认unit）。unit成本乘装数；set表示输入已是整套，不再乘。
-- `package_basis=unit/set`（默认set）。优先整套实包。unit多件装按V17假设重量和宽乘n、长高不变，输出假设提示；不可称实测包装。
+- `package_basis=unit/set`（默认set）。优先整套实包。unit多件装按假设重量和宽乘n、长高不变，输出假设提示；不可称实测包装。
 - 结果币种USD，采购上限CNY。售价/费用换算及汇率来源须在底稿明示，6.7仅可作显式假设。
 
 运输 `transport=sea/air/express`：默认海运12 CNY/kg、体积除数6000；空运55/5000。可覆盖 `rate_cny_kg`、`divisor`，快递必须提供二者。均为可改的初筛假设。

@@ -1,4 +1,4 @@
-"""Independent Decimal implementation of the user's V17 freight/profit model."""
+"""Independent Decimal implementation of the user's freight/profit model."""
 import argparse
 import json
 from decimal import Decimal as D, ROUND_CEILING
@@ -63,7 +63,7 @@ def fba(kg, dims, price, peak, fuel, special):
     return dict(tier=NAMES[tier],actual_lb=actual,dimensional_lb=dimensional,charge_lb=charge,base_usd=base,fuel_usd=fuel_fee,needs_special=needs_special,total_usd=total)
 
 def calculate(data):
-    assumptions = ['FBA为V17固定2026美国非服装参考费率，非实时；未覆盖仓储、关税、认证、开模等。']
+    assumptions = ['FBA为固定2026美国非服装参考费率，非实时；未覆盖仓储、关税、认证、开模等。']
     calculation_mode = data.get('mode', 'profit')
     ad_model = data.get('advertising_model', 'percent')
     if calculation_mode not in ('profit', 'cost_ceiling'):
@@ -146,7 +146,7 @@ def calculate(data):
     contribution = profit+ads if profit is not None else None
     variable_rate = commission_rate+return_rate+ad_rate
     breakeven = (procurement+freight+delivery+fixed_ads)/(1-variable_rate) if procurement is not None and variable_rate<1 else None
-    result = dict(status='ok' if calculation_mode=='profit' else 'ceiling_estimate',mode=calculation_mode,currency='USD',fee_version='V17-2026-US-non-apparel-fixed',quantity=int(n),price_usd=p,cost_set_cny=cost_set,procurement_usd=procurement,volume_kg=volume,billable_kg=bill,freight_usd=freight,fba_usd=delivery,fba_reference=model,fba_source=data.get('fba_override_source','V17固定参考费率'),commission_usd=commission,advertising_model=ad_model,advertising_usd=ads,returns_usd=returns,profit_usd=profit,margin=profit/p if profit is not None and p else None,pre_ad_profit_usd=contribution,pre_ad_margin=contribution/p if contribution is not None and p else None,breakeven_price_fixed_fba_usd=breakeven,assumptions=assumptions)
+    result = dict(status='ok' if calculation_mode=='profit' else 'ceiling_estimate',mode=calculation_mode,currency='USD',fee_version='2026-US-non-apparel-fixed',quantity=int(n),price_usd=p,cost_set_cny=cost_set,procurement_usd=procurement,volume_kg=volume,billable_kg=bill,freight_usd=freight,fba_usd=delivery,fba_reference=model,fba_source=data.get('fba_override_source','固定参考费率'),commission_usd=commission,advertising_model=ad_model,advertising_usd=ads,returns_usd=returns,profit_usd=profit,margin=profit/p if profit is not None and p else None,pre_ad_profit_usd=contribution,pre_ad_margin=contribution/p if contribution is not None and p else None,breakeven_price_fixed_fba_usd=breakeven,assumptions=assumptions)
     if calculation_mode == 'cost_ceiling':
         assumptions.append('仅为目标利润率下采购上限情景，尚无采购成本，不代表利润已验证。')
     if data.get('target_margin_pct') is not None:
